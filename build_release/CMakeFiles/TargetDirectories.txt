@@ -1,0 +1,9 @@
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/dark.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/uselib.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/darknet.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/edit_cache.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/rebuild_cache.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/list_install_components.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/install.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/install/local.dir
+/Users/tony/Desktop/darknet/build_release/CMakeFiles/install/strip.dir

@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/ -->
+<html lang="en-AU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer</title>
+<meta name="robots" content="max-image-preview:large">
+<div class="fit-vids-style" id="fit-vids-style" style="display: none;">­<style>.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></div><script async="" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/f78b6e46c88722800f11eab3c.js"></script><script type="text/javascript" async="" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/analytics.js"></script><script src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/1086978621671253" async=""></script><script async="" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/fbevents.js"></script><script>window._wca = window._wca || [];</script>
+<link rel="dns-prefetch" href="https://stats.wp.com/">
+<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<link rel="dns-prefetch" href="https://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="https://0.gravatar.com/">
+<link rel="dns-prefetch" href="https://1.gravatar.com/">
+<link rel="dns-prefetch" href="https://2.gravatar.com/">
+<link rel="dns-prefetch" href="https://widgets.wp.com/">
+<link rel="alternate" type="application/rss+xml" title="EF Computer » Feed" href="https://efcomputer.net.au/blog/feed/">
+<link rel="alternate" type="application/rss+xml" title="EF Computer » Comments Feed" href="https://efcomputer.net.au/blog/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="EF Computer » 4 Steps to Install Darknet with Cuda and Opencv for realtime object detection Comments Feed" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/feed/">
+		<!-- This site uses the Google Analytics by ExactMetrics plugin v7.1.0 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+							<script src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/js" type="text/javascript" data-cfasync="false" async=""></script>
+			<script type="text/javascript" data-cfasync="false">
+				var em_version = '7.1.0';
+				var em_track_user = true;
+				var em_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-57411711-2',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.ExactMetricsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( em_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if ( type === 'event' ) {
+							
+															parameters.send_to = exactmetrics_frontend.ua;
+								__gtagDataLayer.apply( null, arguments );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dNDMyYj' : true,
+											} );
+															__gtagTracker( 'config', 'UA-57411711-2', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;										(
+						function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						}
+					)();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+				<!-- / Google Analytics by ExactMetrics -->
+				<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/efcomputer.net.au\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.1"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/wp-emoji-release.min(1).js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" id="mediaelement-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/wp-mediaelement.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wc-blocks-vendors-style-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/wc-blocks-vendors-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wc-blocks-style-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/wc-blocks-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-layout-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/woocommerce-layout.css" type="text/css" media="all">
+<style id="woocommerce-layout-inline-css" type="text/css">
+
+	.infinite-scroll .woocommerce-pagination {
+		display: none;
+	}
+</style>
+<link rel="stylesheet" id="woocommerce-smallscreen-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)">
+<link rel="stylesheet" id="woocommerce-general-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/woocommerce.css" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel="stylesheet" id="math-captcha-frontend-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="wc-gateway-ppec-frontend-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/wc-gateway-ppec-frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="keratin-bootstrap-custom-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="keratin-fonts-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="keratin-style-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/related-posts.min.js" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" id="exactmetrics-frontend-script-js-extra">
+/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/efcomputer.net.au\/blog","hash_tracking":"false","ua":"UA-57411711-2","v4_id":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/frontend-gtag.min.js" id="exactmetrics-frontend-script-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script defer="" type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/s-202142.js" id="woocommerce-analytics-js"></script>
+<link rel="https://api.w.org/" href="https://efcomputer.net.au/blog/wp-json/"><link rel="alternate" type="application/json" href="https://efcomputer.net.au/blog/wp-json/wp/v2/posts/18094"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://efcomputer.net.au/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://efcomputer.net.au/blog/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8.1">
+<meta name="generator" content="WooCommerce 5.5.2">
+<link rel="canonical" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/">
+<link rel="shortlink" href="https://wp.me/p8d6sc-4HQ">
+<link rel="alternate" type="application/json+oembed" href="https://efcomputer.net.au/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fefcomputer.net.au%2Fblog%2F4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://efcomputer.net.au/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fefcomputer.net.au%2Fblog%2F4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection%2F&amp;format=xml">
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1086978621671253');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1086978621671253&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code --><style type="text/css">img#wpstats{display:none}</style>
+		<link rel="pingback" href="https://efcomputer.net.au/blog/xmlrpc.php">	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="4 Steps to Install Darknet with Cuda and Opencv for realtime object detection">
+<meta property="og:url" content="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/">
+<meta property="og:description" content="I have been pulling my hair for the last couple of days trying to install Darknet with Cuda and Opencv. Installing Darknet on it’s own is easy, you only need to pull the github repository and…">
+<meta property="article:published_time" content="2020-08-19T03:22:32+00:00">
+<meta property="article:modified_time" content="2021-10-16T04:42:33+00:00">
+<meta property="og:site_name" content="EF Computer">
+<meta property="og:image" content="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?fit=1200%2C528&amp;ssl=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="528">
+<meta name="twitter:creator" content="@efcomputer">
+<meta name="twitter:site" content="@efcomputer">
+<meta name="twitter:text:title" content="4 Steps to Install Darknet with Cuda and Opencv for realtime object detection">
+<meta name="twitter:image" content="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?fit=1200%2C528&amp;ssl=1&amp;w=640">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="icon" href="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2016/05/Efcolour1.png?fit=32%2C32&amp;ssl=1" sizes="32x32">
+<link rel="icon" href="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2016/05/Efcolour1.png?fit=192%2C192&amp;ssl=1" sizes="192x192">
+<link rel="apple-touch-icon" href="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2016/05/Efcolour1.png?fit=180%2C180&amp;ssl=1">
+<meta name="msapplication-TileImage" content="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2016/05/Efcolour1.png?fit=270%2C270&amp;ssl=1">
+<script async="" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/modules.js"></script><style type="text/css">#i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container{margin:0;padding:0;overflow:hidden;position:absolute;border:none;background-color:transparent}body.logged-in.admin-bar #i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.HB-Bar.hb-bar-top,body.logged-in.admin-bar #i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.HB-Slider.hb-top-left,body.logged-in.admin-bar #i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.HB-Slider.hb-top-right,body.logged-in.admin-bar #pull-down.hb-bar-top,body.logged-in.admin-bar #pull-down.hb-top-left,body.logged-in.admin-bar #pull-down.hb-top-right{z-index:99998!important;top:32px!important}.hellobar#pull-down.hb-animated{animation-duration:1s;-o-animation-duration:1s;-ms-animation-duration:1s;-moz-animation-duration:1s;-webkit-animation-duration:1s;animation-fill-mode:forwards;-o-animation-fill-mode:forwards;-ms-animation-fill-mode:forwards;-moz-animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}.hellobar#pull-down{top:-1px;right:10px;padding:3px;z-index:10000002;overflow:hidden;position:absolute;border-radius:0 0 5px 5px;transform:translateY(-40px);-o-transform:translateY(-40px);-ms-transform:translateY(-40px);-moz-transform:translateY(-40px);-webkit-transform:translateY(-40px)}.hellobar#pull-down .hellobar-arrow{cursor:pointer;display:flex;height:11px;opacity:.3;width:11px;filter:flipv;transform:scaleY(-1);-o-transform:scaleY(-1);-ms-transform:scaleY(-1);-moz-transform:scaleY(-1);-webkit-transform:scaleY(-1)}.hellobar#pull-down .hellobar-arrow:hover{opacity:.6}.hellobar#pull-down .hellobar-arrow svg{fill:#fff}.hellobar#pull-down.inverted .hellobar-arrow svg{fill:#3c3e3f}#i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.hb-animated{animation-duration:.25s;-o-animation-duration:.25s;-ms-animation-duration:.25s;-moz-animation-duration:.25s;-webkit-animation-duration:.25s;animation-fill-mode:forwards;-o-animation-fill-mode:forwards;-ms-animation-fill-mode:forwards;-moz-animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}@keyframes hb-bounceInDown{0%,60%,75%,90%,to{transition-timing-function:cubic-bezier(.215,.61,.355,1);-o-transition-timing-function:cubic-bezier(.215,.61,.355,1);-ms-transition-timing-function:cubic-bezier(.215,.61,.355,1);-moz-transition-timing-function:cubic-bezier(.215,.61,.355,1);-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{transform:translate3d(0,-3000px,0);-o-transform:translate3d(0,-3000px,0);-ms-transform:translate3d(0,-3000px,0);-moz-transform:translate3d(0,-3000px,0);-webkit-transform:translate3d(0,-3000px,0)}60%{transform:translateZ(0);-o-transform:translateZ(0);-ms-transform:translateZ(0);-moz-transform:translateZ(0);-webkit-transform:translateZ(0)}75%{transform:translate3d(0,-40px,0);-o-transform:translate3d(0,-40px,0);-ms-transform:translate3d(0,-40px,0);-moz-transform:translate3d(0,-40px,0);-webkit-transform:translate3d(0,-40px,0)}90%{transform:translateZ(0);-o-transform:translateZ(0);-ms-transform:translateZ(0);-moz-transform:translateZ(0);-webkit-transform:translateZ(0)}to{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}}@-moz-keyframes hb-bounceInDown{0%,60%,75%,90%,to{-moz-transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-moz-transform:translate3d(0,-3000px,0)}60%{-moz-transform:translateZ(0)}75%{-moz-transform:translate3d(0,-40px,0)}90%{-moz-transform:translateZ(0)}to{-moz-transform:none}}@-webkit-keyframes hb-bounceInDown{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:translate3d(0,-3000px,0)}60%{-webkit-transform:translateZ(0)}75%{-webkit-transform:translate3d(0,-40px,0)}90%{-webkit-transform:translateZ(0)}to{-webkit-transform:none}}@keyframes hb-bounceInUp{0%,60%,75%,90%,to{transition-timing-function:cubic-bezier(.215,.61,.355,1);-o-transition-timing-function:cubic-bezier(.215,.61,.355,1);-ms-transition-timing-function:cubic-bezier(.215,.61,.355,1);-moz-transition-timing-function:cubic-bezier(.215,.61,.355,1);-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{transform:translate3d(0,3000px,0);-o-transform:translate3d(0,3000px,0);-ms-transform:translate3d(0,3000px,0);-moz-transform:translate3d(0,3000px,0);-webkit-transform:translate3d(0,3000px,0)}60%{transform:translateZ(0);-o-transform:translateZ(0);-ms-transform:translateZ(0);-moz-transform:translateZ(0);-webkit-transform:translateZ(0)}75%{transform:translate3d(0,40px,0);-o-transform:translate3d(0,40px,0);-ms-transform:translate3d(0,40px,0);-moz-transform:translate3d(0,40px,0);-webkit-transform:translate3d(0,40px,0)}90%{transform:translateZ(0);-o-transform:translateZ(0);-ms-transform:translateZ(0);-moz-transform:translateZ(0);-webkit-transform:translateZ(0)}to{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}}@-moz-keyframes hb-bounceInUp{0%,60%,75%,90%,to{-moz-transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-moz-transform:translate3d(0,3000px,0)}60%{-moz-transform:translateZ(0)}75%{-moz-transform:translate3d(0,40px,0)}90%{-moz-transform:translateZ(0)}to{-moz-transform:none}}@-webkit-keyframes hb-bounceInUp{0%,60%,75%,90%,to{-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{-webkit-transform:translate3d(0,3000px,0)}60%{-webkit-transform:translateZ(0)}75%{-webkit-transform:translate3d(0,40px,0)}90%{-webkit-transform:translateZ(0)}to{-webkit-transform:none}}@keyframes hb-bounceOutUp{0%,to{transition-timing-function:ease-in;-o-transition-timing-function:ease-in;-ms-transition-timing-function:ease-in;-moz-transition-timing-function:ease-in;-webkit-transition-timing-function:ease-in}0%{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}to{transform:translate3d(0,-500px,0);-o-transform:translate3d(0,-500px,0);-ms-transform:translate3d(0,-500px,0);-moz-transform:translate3d(0,-500px,0);-webkit-transform:translate3d(0,-500px,0)}}@-moz-keyframes hb-bounceOutUp{0%,to{-moz-transition-timing-function:ease-in}0%{-moz-transform:none}to{-moz-transform:translate3d(0,-500px,0)}}@-webkit-keyframes hb-bounceOutUp{0%,to{-webkit-transition-timing-function:ease-in}0%{-webkit-transform:none}to{-webkit-transform:translate3d(0,-500px,0)}}@keyframes hb-bounceOutDown{0%,to{transition-timing-function:ease-in;-o-transition-timing-function:ease-in;-ms-transition-timing-function:ease-in;-moz-transition-timing-function:ease-in;-webkit-transition-timing-function:ease-in}0%{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}to{transform:translate3d(0,500px,0);-o-transform:translate3d(0,500px,0);-ms-transform:translate3d(0,500px,0);-moz-transform:translate3d(0,500px,0);-webkit-transform:translate3d(0,500px,0)}}@-moz-keyframes hb-bounceOutDown{0%,to{-moz-transition-timing-function:ease-in}0%{-moz-transform:none}to{-moz-transform:translate3d(0,500px,0)}}@-webkit-keyframes hb-bounceOutDown{0%,to{-webkit-transition-timing-function:ease-in}0%{-webkit-transform:none}to{-webkit-transform:translate3d(0,500px,0)}}@keyframes hb-bounceInLeft{0%,75%,to{transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-o-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-ms-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{transform:translate3d(200%,0,0);-o-transform:translate3d(200%,0,0);-ms-transform:translate3d(200%,0,0);-moz-transform:translate3d(200%,0,0);-webkit-transform:translate3d(200%,0,0)}75%{transform:translate3d(-10%,0,0);-o-transform:translate3d(-10%,0,0);-ms-transform:translate3d(-10%,0,0);-moz-transform:translate3d(-10%,0,0);-webkit-transform:translate3d(-10%,0,0)}to{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}}@-moz-keyframes hb-bounceInLeft{0%,75%,to{-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-moz-transform:translate3d(200%,0,0)}75%{-moz-transform:translate3d(-10%,0,0)}to{-moz-transform:none}}@-webkit-keyframes hb-bounceInLeft{0%,75%,to{-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-webkit-transform:translate3d(200%,0,0)}75%{-webkit-transform:translate3d(-10%,0,0)}to{-webkit-transform:none}}@keyframes hb-bounceOutRight{0%,25%,to{transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-o-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-ms-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}25%{transform:translate3d(-10%,0,0);-o-transform:translate3d(-10%,0,0);-ms-transform:translate3d(-10%,0,0);-moz-transform:translate3d(-10%,0,0);-webkit-transform:translate3d(-10%,0,0)}to{transform:translate3d(200%,0,0);-o-transform:translate3d(200%,0,0);-ms-transform:translate3d(200%,0,0);-moz-transform:translate3d(200%,0,0);-webkit-transform:translate3d(200%,0,0)}}@-moz-keyframes hb-bounceOutRight{0%,25%,to{-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-moz-transform:none}25%{-moz-transform:translate3d(-10%,0,0)}to{-moz-transform:translate3d(200%,0,0)}}@-webkit-keyframes hb-bounceOutRight{0%,25%,to{-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-webkit-transform:none}25%{-webkit-transform:translate3d(-10%,0,0)}to{-webkit-transform:translate3d(200%,0,0)}}@keyframes hb-bounceInRight{0%,75%,to{transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-o-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-ms-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{transform:translate3d(-200%,0,0);-o-transform:translate3d(-200%,0,0);-ms-transform:translate3d(-200%,0,0);-moz-transform:translate3d(-200%,0,0);-webkit-transform:translate3d(-200%,0,0)}75%{transform:translate3d(10%,0,0);-o-transform:translate3d(10%,0,0);-ms-transform:translate3d(10%,0,0);-moz-transform:translate3d(10%,0,0);-webkit-transform:translate3d(10%,0,0)}to{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}}@-moz-keyframes hb-bounceInRight{0%,75%,to{-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-moz-transform:translate3d(-200%,0,0)}75%{-moz-transform:translate3d(10%,0,0)}to{-moz-transform:none}}@-webkit-keyframes hb-bounceInRight{0%,75%,to{-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-webkit-transform:translate3d(-200%,0,0)}75%{-webkit-transform:translate3d(10%,0,0)}to{-webkit-transform:none}}@keyframes hb-bounceOutLeft{0%,25%,to{transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-o-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-ms-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255);-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;-webkit-transform:none}25%{transform:translate3d(10%,0,0);-o-transform:translate3d(10%,0,0);-ms-transform:translate3d(10%,0,0);-moz-transform:translate3d(10%,0,0);-webkit-transform:translate3d(10%,0,0)}to{transform:translate3d(-200%,0,0);-o-transform:translate3d(-200%,0,0);-ms-transform:translate3d(-200%,0,0);-moz-transform:translate3d(-200%,0,0);-webkit-transform:translate3d(-200%,0,0)}}@-moz-keyframes hb-bounceOutLeft{0%,25%,to{-moz-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-moz-transform:none}25%{-moz-transform:translate3d(10%,0,0)}to{-moz-transform:translate3d(-200%,0,0)}}@-webkit-keyframes hb-bounceOutLeft{0%,25%,to{-webkit-transition-timing-function:cubic-bezier(.65,-.25,.325,1.255)}0%{-webkit-transform:none}25%{-webkit-transform:translate3d(10%,0,0)}to{-webkit-transform:translate3d(-200%,0,0)}}@keyframes hb-fadeIn{0%,to{transition-timing-function:ease-in;-o-transition-timing-function:ease-in;-ms-transition-timing-function:ease-in;-moz-transition-timing-function:ease-in;-webkit-transition-timing-function:ease-in}0%{opacity:0}to{opacity:1}}@-moz-keyframes hb-fadeIn{0%,to{-moz-transition-timing-function:ease-in}0%{opacity:0}to{opacity:1}}@-webkit-keyframes hb-fadeIn{0%,to{-webkit-transition-timing-function:ease-in}0%{opacity:0}to{opacity:1}}@keyframes hb-fadeOut{0%,to{transition-timing-function:ease-in;-o-transition-timing-function:ease-in;-ms-transition-timing-function:ease-in;-moz-transition-timing-function:ease-in;-webkit-transition-timing-function:ease-in}0%{opacity:1}to{opacity:0}}@-moz-keyframes hb-fadeOut{0%,to{-moz-transition-timing-function:ease-in}0%{opacity:1}to{opacity:0}}@-webkit-keyframes hb-fadeOut{0%,to{-webkit-transition-timing-function:ease-in}0%{opacity:1}to{opacity:0}}@keyframes hb-fadeInDown{0%,to{transition-timing-function:ease-in;-o-transition-timing-function:ease-in;-ms-transition-timing-function:ease-in;-moz-transition-timing-function:ease-in;-webkit-transition-timing-function:ease-in}0%{opacity:0;height:110%;margin-top:-5%}to{opacity:1;height:100%;margin-top:0}}@-moz-keyframes hb-fadeInDown{0%,to{-moz-transition-timing-function:ease-in}0%{opacity:0;height:110%;margin-top:-5%}to{opacity:1;height:100%;margin-top:0}}@-webkit-keyframes hb-fadeInDown{0%,to{-webkit-transition-timing-function:ease-in}0%{opacity:0;height:110%;margin-top:-5%}to{opacity:1;height:100%;margin-top:0}}@keyframes hb-fadeOutUp{0%,to{transition-timing-function:ease-in;-o-transition-timing-function:ease-in;-ms-transition-timing-function:ease-in;-moz-transition-timing-function:ease-in;-webkit-transition-timing-function:ease-in}0%{opacity:1;height:100%;margin-top:0}to{opacity:0;height:110%;margin-top:-5%}}@-moz-keyframes hb-fadeOutUp{0%,to{-moz-transition-timing-function:ease-in}0%{opacity:1;height:100%;margin-top:0}to{opacity:0;height:110%;margin-top:-5%}}@-webkit-keyframes hb-fadeOutUp{0%,to{-webkit-transition-timing-function:ease-in}0%{opacity:1;height:100%;margin-top:0}to{opacity:0;height:110%;margin-top:-5%}}.hb-hidden{display:none}body .hb-cu-offer,html .hb-cu-offer{text-align:center!important;padding:2em!important}body .hb-cu-offer a,html .hb-cu-offer a{text-decoration:none!important;box-shadow:none!important}body .hb-cu-offer a:hover,html .hb-cu-offer a:hover{text-decoration:underline!important;box-shadow:none!important}.hb-cu-modal{display:block!important;width:90%!important;position:absolute!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important;font-family:Open Sans,Helvetica,Arial,sans-serif!important;padding:20px!important;text-align:center!important;font-size:13px!important;background-color:#fefefe!important;margin:0!important;border:1px solid #efefef!important;max-width:670px!important}.hb-cu-modal .progress{margin:10px auto 18px!important;width:95%!important}.hb-cu-modal .caption{color:#000!important;border-bottom:1px solid #ccc!important;font-size:10pt!important;padding:8px 0!important;width:85%!important;max-width:520px!important}.hb-cu-modal .caption,.hb-cu-modal .headline{font-family:Open Sans,Helvetica,Arial,sans-serif!important;margin:auto!important}.hb-cu-modal .headline{letter-spacing:0!important;color:#333!important;font-size:18pt!important;font-weight:700!important;padding:30px!important;max-width:500px!important}.hb-cu-modal .form{padding:0 30px!important}.hb-cu-modal input{display:block!important}.hb-cu-modal input,.hb-cu-modal input[type=checkbox]{padding:13px!important;width:100%!important;max-width:450px!important;margin:auto!important;margin-bottom:15px!important;font-size:1.2em!important;color:#201d1d!important;background:#fff!important;border:1pt solid #c9d7dd!important}.hb-cu-modal input[type=checkbox]{display:inline!important}.hb-cu-modal .hb-gdpr-checkboxes{padding:0 67px!important;margin-bottom:15px!important}.hb-cu-modal .hb-gdpr-checkboxes label{text-align:left;margin:0 0 10px;display:flex;align-items:flex-start}.hb-cu-modal .hb-gdpr-checkboxes span{flex:94%}.hb-cu-modal .hb-gdpr-checkboxes .hb-gdpr-checkbox{padding:0!important;width:auto!important;margin:2px 5px 0 0!important;font-size:1.2em!important;color:#201d1d!important;background:#fff!important;border:1pt solid #c9d7dd!important;display:inline!important}.hb-cu-modal .cta{padding:13px!important;width:100%!important;max-width:450px!important;margin:auto!important;margin-bottom:15px!important;font-size:1.2em!important;color:#201d1d!important;display:block!important;color:#fff!important;text-transform:uppercase!important;text-decoration:none!important;font-family:Open Sans,Helvetica,Arial,sans-serif!important;font-weight:700!important;cursor:pointer!important;padding:20px!important;font-size:18px!important;margin-top:5px!important;border:none!important;border-radius:0!important;-webkit-appearance:none!important}.hb-cu-modal .cta:focus{outline:none!important}.hb-cu-modal .spam-disclaimer{font-family:Open Sans,Helvetica,Arial,sans-serif!important;margin-top:8px!important;color:#9c9c9d!important;font-size:14px!important}.hb-cu-modal-container{display:none;position:fixed!important;z-index:9000000!important;padding:0!important;padding-top:100px!important;left:0!important;top:0!important;width:100%!important;height:100%!important;overflow:auto!important;background-color:#000!important;background-color:rgba(0,0,0,.4)!important;box-sizing:content-box!important}#hb-cu-close-button{margin-top:-35px!important;margin-right:-35px!important;float:right!important;width:auto!important;height:auto!important;background:#333!important;border:2px solid #fff!important;-webkit-border-radius:18px!important;-moz-border-radius:18px!important;border-radius:18px!important;box-shadow:none!important;box-sizing:border-box!important;letter-spacing:normal!important;word-spacing:0!important;text-size-adjust:100%!important;padding:7px!important;display:flex!important;justify-content:center!important;align-items:center!important}#hb-cu-close-button svg{fill:transparent!important;stroke:#fff!important;stroke-linecap:round!important;stroke-width:5px!important}#i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.HB-Modal{top:0;left:0;position:fixed;_position:absolute;_top:expression(eval(document.body.scrollTop));width:100%;height:100%;z-index:10000003}#i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.HB-Modal.hb-animated{opacity:0;height:110%;margin-top:-5%}#i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.HB-Modal.hb-animateIn{animation-name:hb-fadeInDown;-o-animation-name:hb-fadeInDown;-ms-animation-name:hb-fadeInDown;-moz-animation-name:hb-fadeInDown;-webkit-animation-name:hb-fadeInDown}#i640e9075a75efb32dcc0c45dbc2cee14f584a7ea-container.HB-Modal.hb-animateOut{animation-name:hb-fadeOutUp;-o-animation-name:hb-fadeOutUp;-ms-animation-name:hb-fadeOutUp;-moz-animation-name:hb-fadeOutUp;-webkit-animation-name:hb-fadeOutUp}
+
+</style></head>
+
+<body class="post-template-default single single-post postid-18094 single-format-standard theme-keratin woocommerce-js has-site-branding layout-box" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="page" class="site-wrapper hfeed site">
+
+	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+
+					<div class="site-branding-wrapper">
+						<div class="site-logo-wrapper"></div>
+						<div class="site-branding">
+															<p class="site-title"><a href="https://efcomputer.net.au/blog/" title="EF Computer" rel="home">EF Computer</a></p>
+							
+														<p class="site-description">For all your Computers &amp; Electronics needs</p>
+													</div>
+					</div><!-- .site-branding-wrapper -->
+
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-8 col-lg-8">
+
+					<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						<button class="menu-toggle">Primary Menu</button>
+						<div class="site-primary-menu"><ul class="primary-menu sf-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+<li><a href="https://efcomputer.net.au/blog/">Home</a></li><li class="page_item page-item-2"><a href="https://efcomputer.net.au/blog/about/">About</a></li>
+<li class="page_item page-item-60"><a href="https://efcomputer.net.au/blog/cart/">Cart</a></li>
+<li class="page_item page-item-61"><a href="https://efcomputer.net.au/blog/checkout/">Checkout</a></li>
+<li class="page_item page-item-62"><a href="https://efcomputer.net.au/blog/my-account/">My Account</a></li>
+<li class="page_item page-item-427"><a href="https://efcomputer.net.au/blog/privacy-policy/">Privacy Policy</a></li>
+<li class="page_item page-item-59"><a href="https://efcomputer.net.au/blog/shop/">Shop</a></li>
+</ul></div>
+					</nav><!-- #site-navigation -->
+
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+
+	</header><!-- #masthead -->
+
+<div id="content" class="site-content">
+
+	<div class="container">
+		<div class="row">
+
+			<div id="primary" class="content-area col-xs-12 col-sm-12 col-md-9 col-lg-9">
+				<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+
+				
+					
+<article id="post-18094" class="post-18094 post type-post status-publish format-standard has-post-thumbnail hentry category-linux category-mac category-machine-learning tag-cuda tag-darknet tag-opencv" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+	
+	<figure class="post-thumbnail post-thumbnail-single">
+		<img width="1567" height="689" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/DarknetFeatureImage1.png" class="img-featured img-responsive wp-post-image img-zoom-out" alt="" loading="lazy" srcset="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?w=1567&amp;ssl=1 1567w, https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?resize=300%2C132&amp;ssl=1 300w, https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?resize=1024%2C450&amp;ssl=1 1024w, https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?resize=768%2C338&amp;ssl=1 768w, https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?resize=1536%2C675&amp;ssl=1 1536w, https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?resize=600%2C264&amp;ssl=1 600w" sizes="(max-width: 1567px) 100vw, 1567px" data-attachment-id="18363" data-permalink="https://efcomputer.net.au/blog/darknetfeatureimage1/" data-orig-file="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?fit=1567%2C689&amp;ssl=1" data-orig-size="1567,689" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="DarknetFeatureImage1" data-image-description="" data-image-caption="" data-medium-file="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?fit=300%2C132&amp;ssl=1" data-large-file="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/DarknetFeatureImage1.png?fit=788%2C346&amp;ssl=1">	</figure><!-- .post-thumbnail -->
+
+	
+	<div class="entry-meta entry-meta-header">
+		<ul>
+			<li><i class="fa fa-user"></i> <span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://efcomputer.net.au/blog/author/admin/">snorlaxprime</a></span></span></li>
+			<li><i class="fa fa-clock-o"></i> <span class="posted-on"><span class="posted-on-label">Posted on</span> <a href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/" rel="bookmark"><time class="entry-date published" datetime="2020-08-19T13:22:32+10:00">19/08/2020</time><time class="updated" datetime="2021-10-16T14:42:33+10:00">16/10/2021</time></a></span></li>
+		</ul>
+	</div><!-- .entry-meta -->
+
+	<header class="entry-header">
+		<h1 class="entry-title">4 Steps to Install Darknet with Cuda and Opencv for realtime object detection</h1>	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		
+<p>I have been pulling my hair for the last couple of days trying to install Darknet with Cuda and Opencv. Installing Darknet on it’s own is easy, you only need to pull the github repository and compile it. </p>
+
+
+
+<h3>Step 1. Install Darknet</h3>
+
+
+
+<p>Thanks to Joseph Redmond you can download Darknet from the following location:</p>
+
+
+
+<pre class="wp-block-code"><code>git clone https://github.com/pjreddie/darknet
+cd darknet
+make</code></pre>
+
+
+
+<p>Once it compiled successfully you will need to download the pre-trained weight file (it is 237 MB) using the following command</p>
+
+
+
+<pre class="wp-block-code"><code>wget https://pjreddie.com/media/files/yolov3.weights</code></pre>
+
+
+
+<p>Then test it by running the detector using the following command</p>
+
+
+
+<pre class="wp-block-code"><code>./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg</code></pre>
+
+
+
+<p>It should execute successfully and detect the picture of a dog as per below:</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="18103" data-permalink="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/screen-shot-2020-08-17-at-10-42-24-pm/" data-orig-file="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.24-pm.png?fit=633%2C421&amp;ssl=1" data-orig-size="633,421" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screen-Shot-2020-08-17-at-10.42.24-pm" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.24-pm.png?fit=300%2C200&amp;ssl=1" data-large-file="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.24-pm.png?fit=633%2C421&amp;ssl=1" loading="lazy" width="633" height="421" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/Screen-Shot-2020-08-17-at-10.42.24-pm.png" alt="" class="wp-image-18103" srcset="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.24-pm.png?w=633&amp;ssl=1 633w, https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.24-pm.png?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.24-pm.png?resize=600%2C399&amp;ssl=1 600w" sizes="(max-width: 633px) 100vw, 633px"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="18104" data-permalink="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/screen-shot-2020-08-17-at-10-42-01-pm/" data-orig-file="https://i1.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.01-pm.png?fit=767%2C594&amp;ssl=1" data-orig-size="767,594" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screen-Shot-2020-08-17-at-10.42.01-pm" data-image-description="" data-image-caption="" data-medium-file="https://i1.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.01-pm.png?fit=300%2C232&amp;ssl=1" data-large-file="https://i1.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.01-pm.png?fit=767%2C594&amp;ssl=1" loading="lazy" width="767" height="594" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/Screen-Shot-2020-08-17-at-10.42.01-pm.png" alt="" class="wp-image-18104" srcset="https://i1.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.01-pm.png?w=767&amp;ssl=1 767w, https://i1.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.01-pm.png?resize=300%2C232&amp;ssl=1 300w, https://i1.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.42.01-pm.png?resize=600%2C465&amp;ssl=1 600w" sizes="(max-width: 767px) 100vw, 767px" data-recalc-dims="1"></figure>
+
+
+
+<p>The detection output will be in a file called <code>predictions.png</code></p>
+
+
+
+<p>Your detection should take about 6-12 seconds using CPU, you can experiments with a few different files in the data directory, e.g.: horses.jpg, giraffe.jpg, person.jpg, eagle.jpg</p>
+
+
+
+<p>So speed up the detection you will need to use the GPU, this will reduce the time down to fraction of a second, so that’s when Cuda came in, so let’s proceed to the next step to install Cuda.</p>
+
+
+
+<h3>Step 2. Install Cuda</h3>
+
+
+
+<p>The first pain came from installing Cuda. You will have to get the right version of Cuda from NVidia website, this depends on the graphics card that you have. I found that the version that works for me is version 10.2, so I went and download “cuda_10.2.89_mac.dmg”</p>
+
+
+
+<p>Once installed when trying to  compile darknet using the <code>GPU=1</code> in the <code>Makefile</code>. If you encounter the first error come that you can’t find nvcc. To solve this you can modify the Makefile using</p>
+
+
+
+<pre class="wp-block-preformatted">vi Makefile</pre>
+
+
+
+<p>edit the following line</p>
+
+
+
+<pre class="wp-block-preformatted">NVCC=/usr/local/cuda/bin/nvcc</pre>
+
+
+
+<p>Then it will complain that the following library is not loaded when you try to run the image prediction.</p>
+
+
+
+<pre class="wp-block-preformatted">Library not loaded: @rpath/libcudart.10.2.dylib</pre>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="18111" data-permalink="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/screen-shot-2020-08-17-at-10-03-59-pm/" data-orig-file="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.03.59-pm.png?fit=637%2C406&amp;ssl=1" data-orig-size="637,406" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screen-Shot-2020-08-17-at-10.03.59-pm" data-image-description="" data-image-caption="" data-medium-file="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.03.59-pm.png?fit=300%2C191&amp;ssl=1" data-large-file="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.03.59-pm.png?fit=637%2C406&amp;ssl=1" loading="lazy" width="637" height="406" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/Screen-Shot-2020-08-17-at-10.03.59-pm.png" alt="" class="wp-image-18111" srcset="https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.03.59-pm.png?w=637&amp;ssl=1 637w, https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.03.59-pm.png?resize=300%2C191&amp;ssl=1 300w, https://i2.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.03.59-pm.png?resize=600%2C382&amp;ssl=1 600w" sizes="(max-width: 637px) 100vw, 637px" data-recalc-dims="1"></figure>
+
+
+
+<p>I solved it by running the following in the command prompt</p>
+
+
+
+<pre class="wp-block-code"><code>export CUDA_HOME=/usr/local/cuda
+export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib
+export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
+export PATH=$DYLD_LIBRARY_PATH:$PATH</code></pre>
+
+
+
+<p>Then I get hit with the following error:</p>
+
+
+
+<pre class="wp-block-preformatted">CUDA Error: out of memory</pre>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="18112" data-permalink="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/screen-shot-2020-08-17-at-10-05-58-pm/" data-orig-file="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.05.58-pm.png?fit=643%2C406&amp;ssl=1" data-orig-size="643,406" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screen-Shot-2020-08-17-at-10.05.58-pm" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.05.58-pm.png?fit=300%2C189&amp;ssl=1" data-large-file="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.05.58-pm.png?fit=643%2C406&amp;ssl=1" loading="lazy" width="643" height="406" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/Screen-Shot-2020-08-17-at-10.05.58-pm.png" alt="" class="wp-image-18112" srcset="https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.05.58-pm.png?w=643&amp;ssl=1 643w, https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.05.58-pm.png?resize=300%2C189&amp;ssl=1 300w, https://i0.wp.com/efcomputer.net.au/blog/wp-content/uploads/2020/08/Screen-Shot-2020-08-17-at-10.05.58-pm.png?resize=600%2C379&amp;ssl=1 600w" sizes="(max-width: 643px) 100vw, 643px" data-recalc-dims="1"></figure>
+
+
+
+<p>To solve the above, I reconfigure the <code>cfg/yolov3.cfg</code> as following</p>
+
+
+
+<pre class="wp-block-preformatted">batch=32
+subdivision=32
+width=416
+height=416</pre>
+
+
+
+<p>Once this is done successfully, you should see significant improvement in the speed of processing the image. Now we can proceed to the next step to install OpenCV</p>
+
+
+
+<h3>Step 3. Install OpenCV</h3>
+
+
+
+<p>The next pain is to install opencv. Now I am downloading the latest OpenCV using the following command</p>
+
+
+
+<pre class="wp-block-preformatted">cd $home
+mkdir OpenCV
+cd OpenCV
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git</pre>
+
+
+
+<p>Now that you have downloaded opencv, we will try to separate the build in temporary directory called <code>build_opencv</code> so execute the following command</p>
+
+
+
+<pre class="wp-block-preformatted">mkdir build_opencv
+cd build_opencv</pre>
+
+
+
+<p>now configure the opencv by executing <code>cmake</code>, as per the following command:</p>
+
+
+
+<pre class="wp-block-preformatted">cmake -DCMAKE_BUILD_TYPE=Release -D OPENCV_GENERATE_PKGCONFIG=ON -DBUILD_EXAMPLES=ON -D CMAKE_INSTALL_PREFIX=/usr/local ../opencv&nbsp;</pre>
+
+
+
+<p>Then you can build using the following command</p>
+
+
+
+<pre class="wp-block-preformatted">make -j7</pre>
+
+
+
+<p>If all goes well it should build successfully and you can execute the following command to install opencv</p>
+
+
+
+<pre class="wp-block-preformatted">sudo make install</pre>
+
+
+
+<p>Once it installed successfully you can test that pkg-config is configured properly using the following command</p>
+
+
+
+<pre class="wp-block-preformatted">pkg-config --cflags opencv4
+
+-I/usr/local/include/opencv4</pre>
+
+
+
+<p>Try to compile darknet again, if you encounter the error where it still can’t find <code>opencv.pc</code>, you might want to check that you have the <code>opencv4.pc</code> in the following location</p>
+
+
+
+<pre class="wp-block-preformatted">ls /usr/local/lib/pkgconfig/opencv4.pc</pre>
+
+
+
+<p>if you do then just copy opencv4 to opencv by using the following command</p>
+
+
+
+<pre class="wp-block-preformatted">sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/local/lib/pkgconfig/opencv.pc</pre>
+
+
+
+<p>Now try to compile darknet again but first you will need to change the option <code>opencv=1</code> in the <code>Makefile</code>. When you try to run the <code>make</code> command you might get the following error if you are using opencv version 4.</p>
+
+
+
+<pre class="wp-block-preformatted">error: #error "OpenCV 4.x+ requires enabled C++11 support"</pre>
+
+
+
+<p>To solve this you will need to edit the Makefile by adding the<code> -std=c++11</code> in the following line:</p>
+
+
+
+<pre class="wp-block-preformatted">CPP=g++ -std=c++11</pre>
+
+
+
+<p></p>
+
+
+
+<h3>Step 4. Test everything</h3>
+
+
+
+<p>If all goes well you should be able to get realtime detection using the webcam. To try that you can run the following command</p>
+
+
+
+<pre class="wp-block-code"><code>./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights</code></pre>
+
+
+
+<p>This will open your webcam and start detecting objects in realtime as shown in the following video.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<span class="embed-youtube" style="text-align:center; display: block;"><div class="fluid-width-video-wrapper" style="padding-top: 56.3452%;"><iframe loading="lazy" class="youtube-player" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/O36OnjMzOJE.html" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" id="fitvid606695"></iframe></div></span>
+</div></figure>
+
+
+
+<p>You can also get it to run detection on a video by using the following command</p>
+
+
+
+<pre class="wp-block-code"><code>./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights &lt;video file&gt;</code></pre>
+
+
+
+<p>I hope you like this post which shows that AI will soon take over the world (just kidding) but we are not far off. Please drop me a comment if you like this post or subscribe if you haven’t already.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul data-sharing-events-added="true"><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-18094" class="share-twitter sd-button share-icon no-text" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-18094" class="share-facebook sd-button share-icon no-text" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-18094" class="share-linkedin sd-button share-icon no-text" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-18094" class="share-pinterest sd-button share-icon no-text" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/?share=pinterest&amp;nb=1" target="_blank" title="Click to share on Pinterest"><span></span><span class="sharing-screen-reader-text">Click to share on Pinterest (Opens in new window)</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/?share=pocket&amp;nb=1" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-121333764-18094-61758a98cb033" data-src="https://widgets.wp.com/likes/#blog_id=121333764&amp;post_id=18094&amp;origin=efcomputer.net.au&amp;obj_id=121333764-18094-61758a98cb033" data-name="like-post-frame-121333764-18094-61758a98cb033" data-title="Like or Reblog"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-121333764-18094-61758a98cb033" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/saved_resource(7).html" height="55px" width="100%" frameborder="0" scrolling="no" title="Like or Reblog"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid "><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="23714" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://efcomputer.net.au/blog/install-darknet-to-use-with-amd-radeon-gpu/" title="Install Darknet to use with AMD Radeon GPU" data-origin="18094" data-position="0">Install Darknet to use with AMD Radeon GPU</a></span><time class="jp-relatedposts-post-date" datetime="16/10/2021" style="display: block;">16/10/2021</time><span class="jp-relatedposts-post-context">In "Mac"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="720" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://efcomputer.net.au/blog/3-steps-to-prune-mongo-db-in-unifi-controller/" title="3 Steps to prune Mongo DB in Unifi Controller" data-origin="18094" data-position="1">3 Steps to prune Mongo DB in Unifi Controller</a></span><time class="jp-relatedposts-post-date" datetime="09/08/2019" style="display: block;">09/08/2019</time><span class="jp-relatedposts-post-context">In "Linux"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="14627" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://efcomputer.net.au/blog/8-steps-to-instal-mosquitto-influxdb-and-grafana-via-docker/" title="8 Steps to Instal Mosquitto, InfluxDB and Grafana via Docker" data-origin="18094" data-position="2">8 Steps to Instal Mosquitto, InfluxDB and Grafana via Docker</a></span><time class="jp-relatedposts-post-date" datetime="28/07/2020" style="display: block;">28/07/2020</time><span class="jp-relatedposts-post-context">In "Linux"</span></p></div></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta entry-meta-footer">
+		This entry was posted in <a href="https://efcomputer.net.au/blog/category/computer/linux/" rel="category tag">Linux</a>, <a href="https://efcomputer.net.au/blog/category/computer/mac/" rel="category tag">Mac</a>, <a href="https://efcomputer.net.au/blog/category/computer/machine-learning/" rel="category tag">Machine Learning</a> and tagged <a href="https://efcomputer.net.au/blog/tag/cuda/" rel="tag">cuda</a>, <a href="https://efcomputer.net.au/blog/tag/darknet/" rel="tag">darknet</a>, <a href="https://efcomputer.net.au/blog/tag/opencv/" rel="tag">opencv</a>. Bookmark the <a href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/" rel="bookmark">permalink</a>.
+			</footer><!-- .entry-meta -->
+
+</article><!-- #post-## -->
+						<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://efcomputer.net.au/blog/4-steps-to-configure-influxdb-and-grafana/" rel="prev"><span class="meta-nav"><i class="fa fa-chevron-left"></i></span> 4 Steps to Configure InfluxDB and Grafana</a></div><div class="nav-next"><a href="https://efcomputer.net.au/blog/diyhue-light-using-esp8266/" rel="next">DIYHUE light using ESP8266 <span class="meta-nav"><i class="fa fa-chevron-right"></i></span></a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+					
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply					<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe title="Comment Form" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/saved_resource(8).html" name="jetpack_remote_comment" style="width: 100%; height: 58px; border: 0px;" class="jetpack_remote_comment" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups" scrolling="no">
+									</iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = false;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							</form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="">
+
+		<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div><!-- #comments -->
+
+				
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+			<div class="sidebar-area col-xs-12 col-sm-12 col-md-3 col-lg-3">
+	<div id="secondary" class="sidebar widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+
+				<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://efcomputer.net.au/blog/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+	</label>
+	<input type="submit" class="search-submit" value="Search">
+</form>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h2 class="widget-title">Recent Posts</h2>
+		<ul>
+											<li>
+					<a href="https://efcomputer.net.au/blog/install-darknet-to-use-with-amd-radeon-gpu/">Install Darknet to use with AMD Radeon GPU</a>
+									</li>
+											<li>
+					<a href="https://efcomputer.net.au/blog/how-to-update-home-assistant-in-docker-container/">How to Update Home Assistant in Docker Container</a>
+									</li>
+											<li>
+					<a href="https://efcomputer.net.au/blog/how-to-set-up-local-webserver-in-osx-bigsur/">How to Set Up Local Webserver in OSX BigSur</a>
+									</li>
+											<li>
+					<a href="https://efcomputer.net.au/blog/how-to-fix-memory-leak-in-esp8266-nodemcu/">How To Fix Memory leak in ESP8266/NodeMCU</a>
+									</li>
+											<li>
+					<a href="https://efcomputer.net.au/blog/upgrading-nxfilter-on-raspberry-pi/">Upgrading NXFilter on Raspberry Pi</a>
+									</li>
+					</ul>
+
+		</aside><aside id="calendar-3" class="widget widget_calendar"><h2 class="widget-title">Recent Post</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar" class="wp-calendar-table">
+	<caption>October 2021</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+	</tr>
+	<tr>
+		<td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+	</tr>
+	<tr>
+		<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td><a href="https://efcomputer.net.au/blog/2021/10/16/" aria-label="Posts published on 16 October 2021">16</a></td><td>17</td>
+	</tr>
+	<tr>
+		<td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td id="today">25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+	</tr>
+	</tbody>
+	</table><nav aria-label="Previous and next months" class="wp-calendar-nav">
+		<span class="wp-calendar-nav-prev"><a href="https://efcomputer.net.au/blog/2021/09/">« Sep</a></span>
+		<span class="pad">&nbsp;</span>
+		<span class="wp-calendar-nav-next">&nbsp;</span>
+	</nav></div></aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">Recent Comments</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">snorlaxprime</span> on <a href="https://efcomputer.net.au/blog/connecting-touch-sensor-to-bluetooth-amplifier/#comment-67803">Connecting Touch sensor to Bluetooth Amplifier</a></li><li class="recentcomments"><span class="comment-author-link">Myrddin Tieleman</span> on <a href="https://efcomputer.net.au/blog/connecting-touch-sensor-to-bluetooth-amplifier/#comment-67788">Connecting Touch sensor to Bluetooth Amplifier</a></li><li class="recentcomments"><span class="comment-author-link">snorlaxprime</span> on <a href="https://efcomputer.net.au/blog/4-steps-to-send-mqtt-data-to-home-assistant-using-esp8266/#comment-67678">4 Steps to send MQTT data to Home Assistant using ESP8266</a></li><li class="recentcomments"><span class="comment-author-link">Guillaume</span> on <a href="https://efcomputer.net.au/blog/4-steps-to-send-mqtt-data-to-home-assistant-using-esp8266/#comment-67677">4 Steps to send MQTT data to Home Assistant using ESP8266</a></li><li class="recentcomments"><span class="comment-author-link">snorlaxprime</span> on <a href="https://efcomputer.net.au/blog/upgrading-nxfilter-on-raspberry-pi/#comment-67445">Upgrading NXFilter on Raspberry Pi</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<label class="screen-reader-text" for="archives-dropdown-2">Archives</label>
+		<select id="archives-dropdown-2" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value="https://efcomputer.net.au/blog/2021/10/"> October 2021 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2021/09/"> September 2021 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2021/08/"> August 2021 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2021/06/"> June 2021 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2021/05/"> May 2021 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2020/12/"> December 2020 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2020/11/"> November 2020 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2020/09/"> September 2020 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2020/08/"> August 2020 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2020/07/"> July 2020 &nbsp;(4)</option>
+	<option value="https://efcomputer.net.au/blog/2020/05/"> May 2020 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2019/10/"> October 2019 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2019/09/"> September 2019 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2019/08/"> August 2019 &nbsp;(6)</option>
+	<option value="https://efcomputer.net.au/blog/2019/07/"> July 2019 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2019/06/"> June 2019 &nbsp;(4)</option>
+	<option value="https://efcomputer.net.au/blog/2019/05/"> May 2019 &nbsp;(5)</option>
+	<option value="https://efcomputer.net.au/blog/2019/04/"> April 2019 &nbsp;(4)</option>
+	<option value="https://efcomputer.net.au/blog/2019/03/"> March 2019 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2019/02/"> February 2019 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2019/01/"> January 2019 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2018/12/"> December 2018 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2018/11/"> November 2018 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2018/10/"> October 2018 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2018/08/"> August 2018 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2018/07/"> July 2018 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2018/03/"> March 2018 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2018/02/"> February 2018 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2018/01/"> January 2018 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2017/11/"> November 2017 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2017/10/"> October 2017 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2017/09/"> September 2017 &nbsp;(4)</option>
+	<option value="https://efcomputer.net.au/blog/2017/08/"> August 2017 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2017/05/"> May 2017 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2017/03/"> March 2017 &nbsp;(4)</option>
+	<option value="https://efcomputer.net.au/blog/2016/05/"> May 2016 &nbsp;(3)</option>
+	<option value="https://efcomputer.net.au/blog/2015/11/"> November 2015 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2015/09/"> September 2015 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2015/06/"> June 2015 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2015/05/"> May 2015 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2015/03/"> March 2015 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2015/02/"> February 2015 &nbsp;(1)</option>
+	<option value="https://efcomputer.net.au/blog/2014/12/"> December 2014 &nbsp;(2)</option>
+	<option value="https://efcomputer.net.au/blog/2014/11/"> November 2014 &nbsp;(1)</option>
+
+		</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-2" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+			</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>
+			<ul>
+					<li class="cat-item cat-item-3"><a href="https://efcomputer.net.au/blog/category/computer/">Computer</a>
+<ul class="children">
+	<li class="cat-item cat-item-7"><a href="https://efcomputer.net.au/blog/category/computer/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://efcomputer.net.au/blog/category/computer/mac/">Mac</a>
+</li>
+	<li class="cat-item cat-item-203"><a href="https://efcomputer.net.au/blog/category/computer/machine-learning/">Machine Learning</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="https://efcomputer.net.au/blog/category/computer/magento/">Magento</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="https://efcomputer.net.au/blog/category/computer/windows/">Windows</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://efcomputer.net.au/blog/category/ps3/">PS3</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="https://efcomputer.net.au/blog/category/seo/">SEO</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="https://efcomputer.net.au/blog/category/stem/">STEM</a>
+<ul class="children">
+	<li class="cat-item cat-item-46"><a href="https://efcomputer.net.au/blog/category/stem/arduino/">Arduino</a>
+</li>
+	<li class="cat-item cat-item-103"><a href="https://efcomputer.net.au/blog/category/stem/bluetooth/">Bluetooth</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="https://efcomputer.net.au/blog/category/stem/pic18f2550/">PIC18F2550</a>
+</li>
+	<li class="cat-item cat-item-52"><a href="https://efcomputer.net.au/blog/category/stem/raspberry-pi/">Raspberry Pi</a>
+</li>
+	<li class="cat-item cat-item-105"><a href="https://efcomputer.net.au/blog/category/stem/sensors/">Sensors</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://efcomputer.net.au/blog/category/uncategorized/">Uncategorized</a>
+</li>
+			</ul>
+
+			</aside><aside id="meta-2" class="widget widget_meta"><h2 class="widget-title">Meta</h2>
+		<ul>
+			<li><a href="https://efcomputer.net.au/blog/wp-login.php?action=register">Register</a></li>			<li><a href="https://efcomputer.net.au/blog/wp-login.php">Log in</a></li>
+			<li><a href="https://efcomputer.net.au/blog/feed/">Entries feed</a></li>
+			<li><a href="https://efcomputer.net.au/blog/comments/feed/">Comments feed</a></li>
+
+			<li><a href="https://wordpress.org/">WordPress.org</a></li>
+		</ul>
+
+		</aside>
+	</div><!-- #secondary -->
+</div><!-- .col-* columns of main sidebar -->
+		</div><!-- .row -->
+	</div><!-- .container -->
+
+</div><!-- #content -->
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div class="site-info">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-lg-12">
+
+				<div class="blog-info">
+					© Copyright 2021 <span class="sep">–</span> <a href="https://efcomputer.net.au/blog">EF Computer</a>				</div>
+
+				<div class="designer-info">
+					<a href="https://themecot.com/">Keratin Theme</a> <span class="sep">·</span> Powered by <a href="https://wordpress.org/">WordPress</a>				</div>
+
+			</div>
+		</div>
+
+	</div><!-- .container -->
+</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+
+</div> <!-- #page .site-wrapper -->
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/64a62cacc02191a19f01f1398/f78b6e46c88722800f11eab3c.js");</script>	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+			<div id="jp-carousel-loading-overlay">
+			<div id="jp-carousel-loading-wrapper">
+				<span id="jp-carousel-library-loading">&nbsp;</span>
+			</div>
+		</div>
+		<div class="jp-carousel-overlay" style="display: none;">
+
+		<div class="jp-carousel-container">
+			<!-- The Carousel Swiper -->
+			<div class="jp-carousel-wrap swiper-container jp-carousel-swiper-container jp-carousel-transitions" itemscope="" itemtype="https://schema.org/ImageGallery">
+				<div class="jp-carousel swiper-wrapper"></div>
+				<div class="jp-swiper-button-prev swiper-button-prev">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskPrev" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="9" height="12">
+							<path d="M16.2072 16.59L11.6496 12L16.2072 7.41L14.8041 6L8.8335 12L14.8041 18L16.2072 16.59Z" fill="white"></path>
+						</mask>
+						<g mask="url(#maskPrev)">
+							<rect x="0.579102" width="23.8823" height="24" fill="#FFFFFF"></rect>
+						</g>
+					</svg>
+				</div>
+				<div class="jp-swiper-button-next swiper-button-next">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskNext" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="8" height="12">
+							<path d="M8.59814 16.59L13.1557 12L8.59814 7.41L10.0012 6L15.9718 12L10.0012 18L8.59814 16.59Z" fill="white"></path>
+						</mask>
+						<g mask="url(#maskNext)">
+							<rect x="0.34375" width="23.8822" height="24" fill="#FFFFFF"></rect>
+						</g>
+					</svg>
+				</div>
+			</div>
+			<!-- The main close buton -->
+			<div class="jp-carousel-close-hint">
+				<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<mask id="maskClose" mask-type="alpha" maskUnits="userSpaceOnUse" x="5" y="5" width="15" height="14">
+						<path d="M19.3166 6.41L17.9135 5L12.3509 10.59L6.78834 5L5.38525 6.41L10.9478 12L5.38525 17.59L6.78834 19L12.3509 13.41L17.9135 19L19.3166 17.59L13.754 12L19.3166 6.41Z" fill="white"></path>
+					</mask>
+					<g mask="url(#maskClose)">
+						<rect x="0.409668" width="23.8823" height="24" fill="#FFFFFF"></rect>
+					</g>
+				</svg>
+			</div>
+			<!-- Image info, comments and meta -->
+			<div class="jp-carousel-info">
+				<div class="jp-carousel-info-footer">
+					<div class="jp-carousel-pagination-container">
+						<div class="jp-swiper-pagination swiper-pagination"></div>
+						<div class="jp-carousel-pagination"></div>
+					</div>
+					<div class="jp-carousel-photo-title-container">
+						<h2 class="jp-carousel-photo-caption"></h2>
+					</div>
+					<div class="jp-carousel-photo-icons-container">
+						<a href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/#" class="jp-carousel-icon-btn jp-carousel-icon-info" aria-label="Toggle photo metadata visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskInfo" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7537 2C7.26076 2 2.80273 6.48 2.80273 12C2.80273 17.52 7.26076 22 12.7537 22C18.2466 22 22.7046 17.52 22.7046 12C22.7046 6.48 18.2466 2 12.7537 2ZM11.7586 7V9H13.7488V7H11.7586ZM11.7586 11V17H13.7488V11H11.7586ZM4.79292 12C4.79292 16.41 8.36531 20 12.7537 20C17.142 20 20.7144 16.41 20.7144 12C20.7144 7.59 17.142 4 12.7537 4C8.36531 4 4.79292 7.59 4.79292 12Z" fill="white"></path>
+									</mask>
+									<g mask="url(#maskInfo)">
+										<rect x="0.8125" width="23.8823" height="24" fill="#FFFFFF"></rect>
+									</g>
+								</svg>
+							</span>
+						</a>
+												<a href="https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/#" class="jp-carousel-icon-btn jp-carousel-icon-comments" aria-label="Toggle photo comments visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskComments" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.3271 2H20.2486C21.3432 2 22.2388 2.9 22.2388 4V16C22.2388 17.1 21.3432 18 20.2486 18H6.31729L2.33691 22V4C2.33691 2.9 3.2325 2 4.3271 2ZM6.31729 16H20.2486V4H4.3271V18L6.31729 16Z" fill="white"></path>
+									</mask>
+									<g mask="url(#maskComments)">
+										<rect x="0.34668" width="23.8823" height="24" fill="#FFFFFF"></rect>
+									</g>
+								</svg>
+
+								<span class="jp-carousel-has-comments-indicator" aria-label="This image has comments."></span>
+							</span>
+						</a>
+											</div>
+				</div>
+				<div class="jp-carousel-info-extra">
+					<div class="jp-carousel-info-content-wrapper">
+						<div class="jp-carousel-photo-title-container">
+							<h2 class="jp-carousel-photo-title"></h2>
+						</div>
+						<div class="jp-carousel-comments-wrapper">
+															<div id="jp-carousel-comments-loading">
+									<span>Loading Comments...</span>
+								</div>
+								<div class="jp-carousel-comments"></div>
+								<div id="jp-carousel-comment-form-container">
+									<span id="jp-carousel-comment-form-spinner">&nbsp;</span>
+									<div id="jp-carousel-comment-post-results"></div>
+																														<form id="jp-carousel-comment-form">
+												<label for="jp-carousel-comment-form-comment-field" class="screen-reader-text">Write a Comment...</label>
+												<textarea name="comment" class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea" id="jp-carousel-comment-form-comment-field" placeholder="Write a Comment..."></textarea>
+												<div id="jp-carousel-comment-form-submit-and-info-wrapper">
+													<div id="jp-carousel-comment-form-commenting-as">
+																													<fieldset>
+																<label for="jp-carousel-comment-form-email-field">Email (Required)</label>
+																<input type="text" name="email" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-email-field">
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-author-field">Name (Required)</label>
+																<input type="text" name="author" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-author-field">
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-url-field">Website</label>
+																<input type="text" name="url" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-url-field">
+															</fieldset>
+																											</div>
+													<input type="submit" name="submit" class="jp-carousel-comment-form-button" id="jp-carousel-comment-form-button-submit" value="Post Comment">
+												</div>
+											</form>
+																											</div>
+													</div>
+						<div class="jp-carousel-image-meta">
+							<div class="jp-carousel-title-and-caption">
+								<div class="jp-carousel-photo-info">
+									<h3 class="jp-carousel-caption" itemprop="caption description"></h3>
+								</div>
+
+								<div class="jp-carousel-photo-description"></div>
+							</div>
+							<ul class="jp-carousel-image-exif" style="display: none;"></ul>
+							<a class="jp-carousel-image-download" target="_blank" style="display: none;">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="19" height="18">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M5.84615 5V19H19.7775V12H21.7677V19C21.7677 20.1 20.8721 21 19.7775 21H5.84615C4.74159 21 3.85596 20.1 3.85596 19V5C3.85596 3.9 4.74159 3 5.84615 3H12.8118V5H5.84615ZM14.802 5V3H21.7677V10H19.7775V6.41L9.99569 16.24L8.59261 14.83L18.3744 5H14.802Z" fill="white"></path>
+									</mask>
+									<g mask="url(#mask0)">
+										<rect x="0.870605" width="23.8823" height="24" fill="#FFFFFF"></rect>
+									</g>
+								</svg>
+								<span class="jp-carousel-download-text"></span>
+							</a>
+							<div class="jp-carousel-image-map" style="display: none;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/efcomputer.net.au\/blog\/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection\/":18094};
+	</script>
+						<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/photon.min.js" id="jetpack-photon-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/jquery.blockUI.min.js" id="jquery-blockui-js"></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/blog\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/blog\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/efcomputer.net.au\/blog\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/add-to-cart.min.js" id="wc-add-to-cart-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/js.cookie.min.js" id="js-cookie-js"></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/blog\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/blog\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/woocommerce.min.js" id="woocommerce-js"></script>
+<script type="text/javascript" id="wc-cart-fragments-js-extra">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/blog\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/blog\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_2c6b7c01bc34b8ccca0edefcd05f9259","fragment_name":"wc_fragments_2c6b7c01bc34b8ccca0edefcd05f9259","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/cart-fragments.min.js" id="wc-cart-fragments-js"></script>
+<script type="text/javascript" id="wc-cart-fragments-js-after">
+		jQuery( 'body' ).bind( 'wc_fragments_refreshed', function() {
+			var jetpackLazyImagesLoadEvent;
+			try {
+				jetpackLazyImagesLoadEvent = new Event( 'jetpack-lazy-images-load', {
+					bubbles: true,
+					cancelable: true
+				} );
+			} catch ( e ) {
+				jetpackLazyImagesLoadEvent = document.createEvent( 'Event' )
+				jetpackLazyImagesLoadEvent.initEvent( 'jetpack-lazy-images-load', true, true );
+			}
+			jQuery( 'body' ).get( 0 ).dispatchEvent( jetpackLazyImagesLoadEvent );
+		} );
+		
+</script>
+<script type="text/javascript" id="mailchimp-woocommerce-js-extra">
+/* <![CDATA[ */
+var mailchimp_public_data = {"site_url":"https:\/\/efcomputer.net.au\/blog","ajax_url":"https:\/\/efcomputer.net.au\/blog\/wp-admin\/admin-ajax.php","language":"en","allowed_to_set_cookies":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/mailchimp-woocommerce-public.min.js" id="mailchimp-woocommerce-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/imagesloaded.min.js" id="imagesloaded-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/masonry.min.js" id="masonry-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/hover-intent.js" id="hover-intent-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/superfish.js" id="superfish-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/fitvids.js" id="fitvids-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/comment-reply.min.js" id="comment-reply-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/custom.js" id="keratin-custom-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/wp-embed.min.js" id="wp-embed-js"></script>
+<script type="text/javascript" id="jetpack-carousel-js-extra">
+/* <![CDATA[ */
+var jetpackSwiperLibraryPath = {"url":"https:\/\/efcomputer.net.au\/blog\/wp-content\/plugins\/jetpack\/_inc\/build\/carousel\/swiper-bundle.min.js"};
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/efcomputer.net.au\/blog\/wp-admin\/admin-ajax.php","nonce":"aa904f65d7","display_exif":"1","display_comments":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/efcomputer.net.au\/blog\/wp-login.php?redirect_to=https%3A%2F%2Fefcomputer.net.au%2Fblog%2F4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/jetpack-carousel.min.js" id="jetpack-carousel-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/postmessage.min.js" id="postmessage-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/jquery.jetpack-resize.min.js" id="jetpack_resize-js"></script>
+<script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/queuehandler.min.js" id="jetpack_likes_queuehandler-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script async="true" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/count.json"></script><script async="true" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/saved_resource(5)"></script><script type="text/javascript" src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/sharing.min.js" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-linkedin' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-linkedin' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-pocket' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-pocket' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+</script>
+<script src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/816a664087606d67517094d7647e4dcbe5f2da9a.js" type="text/javascript" charset="utf-8" async="async"></script><script type="text/javascript">window._hellobar_wordpress_tags = window._hellobar_wordpress_tags || []; window._hellobar_wordpress_tags.push("cuda"); </script><script type="text/javascript">window._hellobar_wordpress_tags = window._hellobar_wordpress_tags || []; window._hellobar_wordpress_tags.push("darknet"); </script><script type="text/javascript">window._hellobar_wordpress_tags = window._hellobar_wordpress_tags || []; window._hellobar_wordpress_tags.push("opencv"); </script>	<iframe src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+	<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+	
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=121333764&postid=18094&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_AU&jetpack_version=10.2&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=43868d7fe0a38ff886cb59d7cfa7264fa48586cf#parent=https%3A%2F%2Fefcomputer.net.au%2Fblog%2F4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=121333764&postid=18094&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_AU&jetpack_version=10.2&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=43868d7fe0a38ff886cb59d7cfa7264fa48586cf#parent=https%3A%2F%2Fefcomputer.net.au%2Fblog%2F4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		<script src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/e-202142.js" defer=""></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:10.2',blog:'121333764',post:'18094',tz:'10',srv:'efcomputer.net.au'} ]);
+	_stq.push([ 'clickTrackerInit', '121333764', '18094' ]);
+</script>
+
+<img src="./4 Steps to Install Darknet with Cuda and Opencv for realtime object detection – EF Computer_files/g.gif" alt=":)" width="6" height="5" id="wpstats"></body></html>

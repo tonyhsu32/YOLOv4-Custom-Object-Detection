@@ -1,0 +1,9 @@
+/Users/tony/Desktop/darknet/libdarknet.dylib
+/Users/tony/Desktop/darknet/include/darknet/darknet.h
+/Users/tony/Desktop/darknet/include/darknet/yolo_v2_class.hpp
+/Users/tony/Desktop/darknet/uselib
+/Users/tony/Desktop/darknet/darknet
+/Users/tony/Desktop/darknet/share/darknet/DarknetTargets.cmake
+/Users/tony/Desktop/darknet/share/darknet/DarknetTargets-release.cmake
+/Users/tony/Desktop/darknet/share/darknet/DarknetConfig.cmake
+/Users/tony/Desktop/darknet/share/darknet/DarknetConfigVersion.cmake
